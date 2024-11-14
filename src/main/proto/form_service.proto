@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.example.grpc;
+
+import "src/main/proto/form_data.proto";
+
+service FormService {
+  // gRPC method to upload form data
+  rpc UploadForm(FormRequest) returns (FormResponse);
+
+  // gRPC method to retrieve form data
+  rpc RetrieveForm(RetrieveRequest) returns (FormData);
+}

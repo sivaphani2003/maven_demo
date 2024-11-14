@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package com.example.grpc;
+
+// The FormService defines the gRPC service for handling form submissions
+service FormService {
+  // Submit a form
+  rpc SubmitForm (FormRequest) returns (FormResponse);
+
+  // Retrieve form data based on name and email
+  rpc RetrieveFormData (RetrieveRequest) returns (FormResponse);
+}
+
+// The FormRequest message represents the data being submitted in the form
+message FormRequest {
+  string first_name = 1;   // User's first name
+  string last_name = 2;    // User's last name
+  string phone_number = 3; // User's phone number
+  string email = 4;        // User's email address
+
+  // Dynamic fields from field1 to field30
+  string field1 = 5;
+  string field2 = 6;
+  string field3 = 7;
+  string field4 = 8;
+  string field5 = 9;
+  string field6 = 10;
+  string field7 = 11;
+  string field8 = 12;
+  string field9 = 13;
+  string field10 = 14;
+  string field11 = 15;
+  string field12 = 16;
+  string field13 = 17;
+  string field14 = 18;
+  string field15 = 19;
+  string field16 = 20;
+  string field17 = 21;
+  string field18 = 22;
+  string field19 = 23;
+  string field20 = 24;
+  string field21 = 25;
+  string field22 = 26;
+  string field23 = 27;
+  string field24 = 28;
+  string field25 = 29;
+  string field26 = 30;
+  string field27 = 31;
+  string field28 = 32;
+  string field29 = 33;
+  string field30 = 34;
+}
+
+// The FormResponse message is used to return a response to the client
+message FormResponse {
+  string message = 1;  // Message indicating success or failure
+  bool success = 2;    // Boolean indicating if the operation was successful
+}
+
+// The RetrieveRequest message represents the data needed to retrieve the form
+message RetrieveRequest {
+  string name = 1;     // Name of the user
+  string email = 2;    // Email of the user
+}
